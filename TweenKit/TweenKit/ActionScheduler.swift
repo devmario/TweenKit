@@ -53,7 +53,7 @@ import QuartzCore
             return
         }
         
-        animation.didFinish()
+        animation.didBecomeInactive()
         animations.remove(at: index)
         
         if animations.isEmpty {
@@ -149,7 +149,8 @@ import QuartzCore
         }
         
         // Remove finished animations
-        animationsToRemove.forEach{
+        animationsToRemove.forEach {
+            $0.didFinish()
             remove(animation: $0)
         }
         animationsToRemove.removeAll()

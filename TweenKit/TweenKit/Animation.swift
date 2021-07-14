@@ -55,9 +55,12 @@ public class Animation : Equatable {
         action.willBegin()
     }
     
+    func didBecomeInactive() {
+        action.didBecomeInactive()
+    }
+    
     func didFinish() {
         action.didFinish()
-        action.didBecomeInactive()
     }
     
     func update(elapsedTime: CFTimeInterval) { 
